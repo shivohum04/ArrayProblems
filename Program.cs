@@ -1,28 +1,16 @@
 ﻿using System;
-// max and min 
+// pattern print
 class Program
 {
     static void Main()
     {
-        int[] numbers = { 5, 2, 8, 1, 7, 3, 9 };
-
-        int max = numbers[0];
-        int min = numbers[0];
-
-        foreach (int number in numbers)
+       for(int i = 5; i > 0; i--)
         {
-            if (number > max)
+            for(int j = 0; j <= i; j++)
             {
-                max = number;
+                Console.Write("*");
             }
-
-            if (number < min)
-            {
-                min = number;
-            }
+            Console.WriteLine("");
         }
-
-        Console.WriteLine("Maximum value: " + max);
-        Console.WriteLine("Minimum value: " + min);
     }
 }
