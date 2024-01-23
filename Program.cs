@@ -1,28 +1,28 @@
 ﻿using System;
-
-namespace Q3 // count frequency of each element 
+// max and min 
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        int[] numbers = { 5, 2, 8, 1, 7, 3, 9 };
+
+        int max = numbers[0];
+        int min = numbers[0];
+
+        foreach (int number in numbers)
         {
-            int[] numbers = new int[] { 1, 2, 3, 4, 1, 5, 6 , 1,2, 3};
-
-            for (int i = 0; i < numbers.Length; i++)
+            if (number > max)
             {
-                int count = 1;
+                max = number;
+            }
 
-                for (int j = i+1; j < numbers.Length; j++)
-                {
-                    if (numbers[i] == numbers[j])
-                    {
-                        count++;
-                        numbers[j] = 0;
-                    }
-                }
-
-                Console.WriteLine(numbers[i] + ":" + count);
+            if (number < min)
+            {
+                min = number;
             }
         }
+
+        Console.WriteLine("Maximum value: " + max);
+        Console.WriteLine("Minimum value: " + min);
     }
 }
