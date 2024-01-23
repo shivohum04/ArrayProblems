@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Q2 // Print unique elements
+namespace Q3 // count frequency of each element 
 {
     internal class Program
     {
@@ -10,21 +10,18 @@ namespace Q2 // Print unique elements
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                bool isUnique = true;
+                int count = 1;
 
-                for (int j = 0; j < numbers.Length; j++)
+                for (int j = i+1; j < numbers.Length; j++)
                 {
-                    if (i != j && numbers[i] == numbers[j])
+                    if (numbers[i] == numbers[j])
                     {
-                        isUnique = false;
-                        break;
+                        count++;
+                        numbers[j] = 0;
                     }
                 }
 
-                if (isUnique)
-                {
-                    Console.WriteLine(numbers[i]);
-                }
+                Console.WriteLine(numbers[i] + ":" + count);
             }
         }
     }
